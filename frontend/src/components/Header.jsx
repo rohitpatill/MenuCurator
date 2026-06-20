@@ -19,7 +19,7 @@ export default function Header({ showBack, onBack, restaurant, tagline, table = 
   return (
     <header
       className="pad"
-      style={{ flex: "none", position: "relative", zIndex: 3, display: "flex", alignItems: "center", gap: 12, padding: "20px var(--pad-x) 14px" }}
+      style={{ flex: "none", position: "relative", zIndex: 3, display: "flex", alignItems: "center", gap: 12, paddingTop: 20, paddingBottom: 14 }}
     >
       {showBack && (
         <button onClick={onBack} aria-label="Back" style={circleBtn}>
@@ -30,7 +30,9 @@ export default function Header({ showBack, onBack, restaurant, tagline, table = 
       )}
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ font: "700 11px " + FONT, letterSpacing: ".22em", color: "#B5852F" }}>{restaurant.toUpperCase()}</div>
-        <div style={{ font: "500 12px " + FONT, color: "#9C9384", marginTop: 2, letterSpacing: ".04em" }}>{tagline}</div>
+        {tagline ? (
+          <div style={{ font: "500 12px " + FONT, color: "#9C9384", marginTop: 2, letterSpacing: ".04em" }}>{tagline}</div>
+        ) : null}
       </div>
       <div style={{ flex: "none", display: "flex", alignItems: "center", gap: 7, padding: "7px 12px", borderRadius: 999, background: "#FFFEFB", border: "1px solid #ECE4D4" }}>
         <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#1E8E4E", boxShadow: "0 0 0 3px rgba(30,142,78,.14)" }} />

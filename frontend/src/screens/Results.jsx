@@ -29,7 +29,7 @@ export default function Results({ data, view, setView, onAsk, onBack }) {
   const tabOff = { flex: 1, padding: 9, borderRadius: 10, border: "none", cursor: "pointer", background: "transparent", color: "#9C8A6E", font: "600 13px " + FONT };
 
   return (
-    <div className="pad" style={{ padding: "6px var(--pad-x) 30px", animation: "vmUp .45s ease both" }}>
+    <div className="pad" style={{ paddingTop: 6, paddingBottom: 30, animation: "vmUp .45s ease both" }}>
       <div style={{ display: "flex", alignItems: "flex-start", gap: 11, margin: "4px 0 6px" }}>
         <div style={maitreIcon(34, 11)}>
           <Spark />

@@ -30,7 +30,7 @@ export default function ChatBar({ suggested, onChip, value, onChange, onSend, pl
   return (
     <div
       className="pad"
-      style={{ flex: "none", position: "relative", zIndex: 4, padding: "10px var(--pad-x) 16px", background: "#F6F1E8", borderTop: "1px solid #ECE4D4" }}
+      style={{ flex: "none", position: "relative", zIndex: 4, paddingTop: 10, paddingBottom: 16, background: "#F6F1E8", borderTop: "1px solid #ECE4D4" }}
     >
       <div className="vm-scroll" style={{ display: "flex", gap: 7, overflowX: "auto", paddingBottom: 9 }}>
         {suggested.map(([label, q]) => (

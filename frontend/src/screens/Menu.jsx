@@ -64,12 +64,12 @@ function MenuRow({ d, ask, picked, onTap }) {
 export default function Menu({ mode, sections, picks, onTapAsk, onTapPick }) {
   const ask = mode === "ask";
   return (
-    <div className="pad" style={{ padding: "6px var(--pad-x) 30px", animation: "vmUp .45s ease both" }}>
+    <div className="pad" style={{ paddingTop: 6, paddingBottom: 30, animation: "vmUp .45s ease both" }}>
       <h2 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 30, color: "#1C1714", margin: "6px 0 4px" }}>
         {ask ? "Browse the menu" : "Pick your dishes"}
       </h2>
       <p style={{ font: "500 13px " + FONT, color: "#9C9384", margin: "0 0 18px" }}>
-        {ask ? "Tap any dish to ask Maître about it." : "Select a few, then I'll balance the order."}
+        {ask ? "Tap any dish to ask MenuCurator about it." : "Select a few, then I'll balance the order."}
       </p>
       {sections.map((sec) => (
         <div key={sec.title} style={{ marginBottom: 22 }}>

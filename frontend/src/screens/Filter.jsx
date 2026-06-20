@@ -17,7 +17,7 @@ const moreBtn = {
 
 export default function Filter({ filters, setFilter, extras, toggleExtra, note, setNote, showMore, toggleMore }) {
   return (
-    <div className="pad" style={{ padding: "6px var(--pad-x) 28px", animation: "vmUp .45s ease both" }}>
+    <div className="pad" style={{ paddingTop: 6, paddingBottom: 28, animation: "vmUp .45s ease both" }}>
       <h2 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 30, color: "#1C1714", margin: "6px 0 4px" }}>Find dishes for us</h2>
       <p style={{ font: "500 13px " + FONT, color: "#9C9384", margin: "0 0 20px" }}>A few taps is all it takes.</p>
 

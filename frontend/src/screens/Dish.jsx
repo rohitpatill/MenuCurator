@@ -4,7 +4,7 @@ import { FONT, SERIF, DietMark, priceLabel, serveLabel, Bubble, Typing } from ".
 export default function Dish({ dish, chat, typing }) {
   return (
     <>
-      <div className="pad" style={{ padding: "6px var(--pad-x) 16px", animation: "vmUp .4s ease both" }}>
+      <div className="pad" style={{ paddingTop: 6, paddingBottom: 16, animation: "vmUp .4s ease both" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <DietMark diet={dish.diet} />
           <span style={{ font: "600 10px " + FONT, letterSpacing: ".1em", color: "#B0A693", textTransform: "uppercase" }}>
@@ -20,7 +20,7 @@ export default function Dish({ dish, chat, typing }) {
           <span>{dish.spice ? dish.spice + " heat" : "no chilli"}</span>
         </div>
       </div>
-      <div className="pad" style={{ padding: "8px var(--pad-x) 20px" }}>
+      <div className="pad" style={{ paddingTop: 8, paddingBottom: 20 }}>
         {chat.map((m, i) => (
           <Bubble key={i} m={m} />
         ))}

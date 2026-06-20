@@ -19,7 +19,7 @@ export default function Footer({ children }) {
   return (
     <div
       className="pad"
-      style={{ flex: "none", position: "relative", zIndex: 4, padding: "14px var(--pad-x) 18px", background: "linear-gradient(rgba(246,241,232,0),#F6F1E8 38%)" }}
+      style={{ flex: "none", position: "relative", zIndex: 4, paddingTop: 14, paddingBottom: 18, background: "linear-gradient(rgba(246,241,232,0),#F6F1E8 38%)" }}
     >
       {children}
     </div>

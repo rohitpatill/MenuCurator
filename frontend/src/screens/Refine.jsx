@@ -4,14 +4,14 @@ import { FONT, SERIF, DietMark, Spark, maitreIcon, Bubble, Typing } from "../ui.
 export default function Refine({ picked, chat, typing }) {
   return (
     <>
-      <div className="pad" style={{ padding: "6px var(--pad-x) 6px", animation: "vmUp .45s ease both" }}>
+      <div className="pad" style={{ paddingTop: 6, paddingBottom: 6, animation: "vmUp .45s ease both" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 11, margin: "4px 0 12px" }}>
           <div style={maitreIcon(34, 11)}>
             <Spark />
           </div>
           <div>
             <h2 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 23, color: "#1C1714", margin: 0, lineHeight: 1.05 }}>Refine my picks</h2>
-            <div style={{ font: "500 11.5px " + FONT, color: "#A39A8A", marginTop: 1 }}>Maître is looking at your selection</div>
+            <div style={{ font: "500 11.5px " + FONT, color: "#A39A8A", marginTop: 1 }}>MenuCurator is looking at your selection</div>
           </div>
         </div>
         <div style={{ background: "#FBF3EA", border: "1px solid #F3E6D4", borderRadius: 16, padding: "12px 13px" }}>
@@ -26,7 +26,7 @@ export default function Refine({ picked, chat, typing }) {
           </div>
         </div>
       </div>
-      <div className="pad" style={{ padding: "10px var(--pad-x) 18px" }}>
+      <div className="pad" style={{ paddingTop: 10, paddingBottom: 18 }}>
         {chat.map((m, i) => (
           <Bubble key={i} m={m} />
         ))}

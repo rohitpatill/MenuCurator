@@ -87,40 +87,40 @@ textarea {
 }
 
 /* ---------- App shell ----------
-   The app IS the screen. Header + scrolling body + footer in a flex column. */
+   The app IS the screen — ALWAYS full viewport, edge to edge, at every size.
+   Header + scrolling body + footer in a flex column. No centered card. */
 .app {
   position: relative;
   display: flex;
   flex-direction: column;
   height: 100vh;
   height: 100dvh;
-  width: 100%;
+  width: 100vw;
   max-width: 100%;
-  margin: 0 auto;
   background: var(--paper);
   overflow: hidden;
 }
 
-/* On wide screens: warm backdrop fills the viewport, the app becomes a
-   centered, card-like column with breathing room around it. */
+/* On wide screens the app still fills the whole screen edge-to-edge.
+   Each section's inner content is centered in a readable column via .pad,
+   so the shell is full-width but text/cards never stretch absurdly wide. */
 @media (min-width: 760px) {
-  body {
-    background: radial-gradient(1100px 700px at 12% -10%, #efe4d3 0%, transparent 55%),
-      radial-gradient(900px 760px at 105% 110%, #f0e2cf 0%, transparent 55%), #ece3d4;
-  }
-  .app {
-    max-width: var(--content-max);
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    margin: 32px auto;
-    border-radius: 28px;
-    box-shadow: 0 40px 90px -40px rgba(60, 40, 20, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  :root {
+    --pad-x: 32px;
   }
 }
 
+/* .pad lays out a full-width row whose children are capped to a centered
+   content column. Header, body sections and footer all use it, so they align
+   to the same column while their backgrounds run full-width. */
+.pad {
+  padding-left: var(--pad-x);
+  padding-right: var(--pad-x);
+}
 @media (min-width: 760px) {
-  :root {
-    --pad-x: 36px;
+  .pad {
+    padding-left: max(var(--pad-x), calc((100% - var(--content-max)) / 2));
+    padding-right: max(var(--pad-x), calc((100% - var(--content-max)) / 2));
   }
 }
 
@@ -140,12 +140,6 @@ textarea {
   overflow-y: auto;
   position: relative;
   z-index: 1;
-}
-
-/* Horizontal padding driven by one variable so every screen aligns. */
-.pad {
-  padding-left: var(--pad-x);
-  padding-right: var(--pad-x);
 }
 
 /* Two-column grid that collapses to one on phones — used by Home cards,

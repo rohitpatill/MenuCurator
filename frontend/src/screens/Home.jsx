@@ -31,13 +31,13 @@ function SmallCard({ onClick, title, sub, children }) {
 
 export default function Home({ onFilter, onAsk, onPick }) {
   return (
-    <div className="pad" style={{ padding: "8px var(--pad-x) 30px", animation: "vmUp .5s ease both" }}>
+    <div className="pad" style={{ paddingTop: 8, paddingBottom: 30, animation: "vmUp .5s ease both" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 11, margin: "6px 0 18px" }}>
         <div style={maitreIcon(42, 13)}>
           <Spark size={20} />
         </div>
         <div>
-          <div style={{ font: "600 13px " + FONT, color: "#1C1714" }}>Maître</div>
+          <div style={{ font: "600 13px " + FONT, color: "#1C1714" }}>MenuCurator</div>
           <div style={{ font: "500 11.5px " + FONT, color: "#A39A8A" }}>your menu concierge</div>
         </div>
       </div>
