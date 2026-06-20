@@ -14,6 +14,7 @@ export function useMenuApp() {
   const [menu, setMenu] = useState({ restaurant: "Marigold", tagline: "Flavours, curated", dishes: [] });
 
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
+  const [partyCustom, setPartyCustom] = useState(4);
   const [extras, setExtras] = useState({});
   const [note, setNote] = useState("");
   const [showMore, setShowMore] = useState(false);
@@ -37,7 +38,7 @@ export function useMenuApp() {
   }, []);
 
   const pickCount = Object.keys(picks).filter((k) => picks[k]).length;
-  const party = partySize(filters.party);
+  const party = partySize(filters.party, partyCustom);
 
   function back() {
     if (screen === "dish") setScreen(dishReturn || "home");
@@ -133,7 +134,7 @@ export function useMenuApp() {
 
   return {
     screen, setScreen, menuMode, busy, busyText, menu,
-    filters, setFilters, extras, setExtras, note, setNote, showMore, setShowMore,
+    filters, setFilters, partyCustom, setPartyCustom, extras, setExtras, note, setNote, showMore, setShowMore,
     results, resultView, setResultView,
     picks, togglePick, pickCount, refineChat, refineTyping, refineInput, setRefineInput,
     dish, chat, dishTyping, input, setInput,

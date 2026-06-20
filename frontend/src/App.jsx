@@ -32,6 +32,8 @@ export default function App() {
           <Filter
             filters={a.filters}
             setFilter={(k, v) => a.setFilters((f) => ({ ...f, [k]: v }))}
+            partyCustom={a.partyCustom}
+            setPartyCustom={a.setPartyCustom}
             extras={a.extras}
             toggleExtra={(k) => a.setExtras((e) => ({ ...e, [k]: !e[k] }))}
             note={a.note}

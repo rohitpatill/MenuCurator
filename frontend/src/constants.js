@@ -32,8 +32,8 @@ export const DEFAULT_FILTERS = {
   spice: "Medium",
 };
 
-export function partySize(party) {
-  return party === "5–6" ? 6 : party === "Custom" ? 4 : 3;
+export function partySize(party, custom) {
+  return party === "5–6" ? 6 : party === "Custom" ? custom || 4 : 3;
 }
 
 export const SUGGESTED_DISH_QS = [

@@ -15,7 +15,23 @@ const moreBtn = {
   borderTop: "1px solid #ECE4D4",
 };
 
-export default function Filter({ filters, setFilter, extras, toggleExtra, note, setNote, showMore, toggleMore }) {
+const stepBtn = (disabled) => ({
+  width: 38,
+  height: 38,
+  borderRadius: "50%",
+  border: "1px solid #E6DECE",
+  background: disabled ? "#F4EFE6" : "#FFFEFB",
+  color: disabled ? "#CFC6B4" : "#1C1714",
+  font: "600 20px " + FONT,
+  cursor: disabled ? "default" : "pointer",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  lineHeight: 1,
+});
+
+export default function Filter({ filters, setFilter, partyCustom, setPartyCustom, extras, toggleExtra, note, setNote, showMore, toggleMore }) {
+  const clampCustom = (n) => Math.max(1, Math.min(50, n));
   return (
     <div className="pad" style={{ paddingTop: 6, paddingBottom: 28, animation: "vmUp .45s ease both" }}>
       <h2 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 30, color: "#1C1714", margin: "6px 0 4px" }}>Find dishes for us</h2>
@@ -31,6 +47,16 @@ export default function Filter({ filters, setFilter, extras, toggleExtra, note, 
               </button>
             ))}
           </div>
+          {g.key === "party" && filters.party === "Custom" && (
+            <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 12, animation: "vmFade .3s ease both" }}>
+              <button onClick={() => setPartyCustom((n) => clampCustom(n - 1))} disabled={partyCustom <= 1} style={stepBtn(partyCustom <= 1)}>−</button>
+              <div style={{ minWidth: 70, textAlign: "center" }}>
+                <div style={{ font: "700 24px " + FONT, color: "#1C1714", lineHeight: 1 }}>{partyCustom}</div>
+                <div style={{ font: "500 11px " + FONT, color: "#9C9384", marginTop: 3 }}>{partyCustom === 1 ? "guest" : "guests"}</div>
+              </div>
+              <button onClick={() => setPartyCustom((n) => clampCustom(n + 1))} disabled={partyCustom >= 50} style={stepBtn(partyCustom >= 50)}>+</button>
+            </div>
+          )}
         </div>
       ))}
 
