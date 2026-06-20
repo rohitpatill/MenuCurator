@@ -15,7 +15,7 @@ const circleBtn = {
   color: "#1C1714",
 };
 
-export default function Header({ showBack, onBack, restaurant, tagline, table = "Table 14" }) {
+export default function Header({ showBack, onBack, restaurant, tagline }) {
   return (
     <header
       className="pad"
@@ -33,10 +33,6 @@ export default function Header({ showBack, onBack, restaurant, tagline, table = 
         {tagline ? (
           <div style={{ font: "500 12px " + FONT, color: "#9C9384", marginTop: 2, letterSpacing: ".04em" }}>{tagline}</div>
         ) : null}
-      </div>
-      <div style={{ flex: "none", display: "flex", alignItems: "center", gap: 7, padding: "7px 12px", borderRadius: 999, background: "#FFFEFB", border: "1px solid #ECE4D4" }}>
-        <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#1E8E4E", boxShadow: "0 0 0 3px rgba(30,142,78,.14)" }} />
-        <span style={{ font: "600 12px " + FONT, color: "#1C1714" }}>{table}</span>
       </div>
     </header>
   );
