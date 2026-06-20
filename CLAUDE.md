@@ -243,11 +243,15 @@ After editing `menu.json` or backend config, **restart Flask** (no hot reload fo
 - **Gemini-only.** The earlier multi-provider abstraction was dropped.
 - **Deterministic-first, AI-for-judgement.** Filtering is Python; taste/phrasing
   is Gemini. Keeps results correct, cheap, and never shows sold-out items.
-- **Recommend like a real diner.** Combo dish-count scales with `party_size`
-  (1 person = 1-2 dishes; large group = a varied spread + a worded "order a few
-  portions" hint, no quantity fields). **Breads are never recommended** (default
-  accompaniment); the AI helps decide curries/starters/mains/desserts/drinks
-  only. No cart/quantity — we suggest, we don't fix a menu.
+- **Recommend like a real diner — by reasoning, not hardcoded counts.** The
+  prompt tells Gemini to picture `party_size` real people and order sensibly:
+  a bigger table gets more variety across EVERY course, including several
+  different drinks and desserts (8 people won't share one mojito). A worded
+  "order a couple of portions" hint covers quantity — no quantity fields. The
+  mock fallback approximates this with a smooth proportional formula (not
+  per-size buckets). **Breads are never recommended** (default accompaniment);
+  the AI helps decide curries/starters/mains/desserts/drinks only. No
+  cart/quantity — we suggest, we don't fix a menu.
 - **MOCK_MODE** keeps the app fully working with no API key.
 - **One state hook** (`useMenuApp`) — screens are presentational; `picks` persist
   across all navigation.

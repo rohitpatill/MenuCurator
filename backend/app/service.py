@@ -8,6 +8,7 @@ to simple deterministic responses so the UI is fully usable offline.
 from __future__ import annotations
 
 import json
+import math
 
 import config
 
@@ -50,39 +51,41 @@ OUTPUT SHAPE (exactly this)
   ]
 }
 
-THINK LIKE A REAL DINER ORDERING FOR THIS PARTY SIZE
-This is the most important rule. Order the way a sensible person actually would
-for "party_size" people — never a fixed 3-dish set regardless of headcount.
-- 1 person: 1-2 dishes total. Usually ONE main, optionally one starter or one
-  dessert. NEVER suggest multiple curries or a 3-course feast for one person.
-- 2-3 people: a small shared spread — about 1 starter, 1-2 mains, maybe a
-  dessert to share.
-- 4-6 people: a fuller table — 2 starters, 2-3 mains (mix cuisines/proteins),
-  1-2 desserts.
-- 7+ people (large group): a generous variety — 3-4 starters, 3-5 different
-  mains (several curries / proteins so the table has choice), 2-3 desserts. The
-  number of DIFFERENT dishes grows with the group; aim that the combo's dishes'
-  combined "serves" roughly covers party_size. When one popular dish alone won't
-  feed everyone, say so in words in the "why" (e.g. "order 2-3 portions of the
-  butter chicken for the group") — do NOT add quantity fields; we only suggest.
-Use each dish's "serves" to judge how many distinct dishes a combo needs.
+THINK LIKE A REAL PERSON ORDERING FOR THIS TABLE
+This is the most important rule. Picture "party_size" real people sitting down
+together and order the way a thoughtful host actually would. Reason from common
+sense — do NOT apply a fixed dish count.
+- A bigger table needs MORE variety across EVERY part of the meal: more
+  starters, more mains, AND a real choice of drinks and desserts. Eight people
+  will not share a single drink or one dessert — they'd want several different
+  ones so everyone has something they like. A solo diner wants just a dish or
+  two, not a feast.
+- Use each dish's "serves" against "party_size" to judge how many distinct
+  dishes are enough to actually feed and satisfy the group. If one portion of a
+  popular dish won't feed everyone, say so in the "why" in plain words (e.g.
+  "you'll want a couple of portions of this for the group") — never add quantity
+  fields; we only suggest.
+- Balance the spread sensibly: enough food, a sensible mix of proteins/cuisines,
+  and — when drinks/desserts are available — a VARIETY of them proportional to
+  the group, not just one token item.
+Always ask yourself: "If I were ordering this for N people, would this feel
+right, or too little / too much?" Adjust until it feels right.
 
-DO NOT recommend breads/naan/roti (course is a side accompaniment, not a
-decision). If any bread-like dish is in candidates, leave it out — diners add
-bread by default and don't need help choosing it.
+DO NOT recommend breads/naan/roti (a side accompaniment, not a decision). If any
+bread-like dish is in candidates, leave it out — diners add bread by default.
 
 HOW TO CHOOSE
-- "individual": 4-6 of the strongest single dishes, best first (scale toward the
-  lower end for tiny parties, higher for big ones). Prefer dishes tagged
-  "bestseller" or "chefspecial", with variety across course/cuisine, fitting the
-  party size and any note.
+- "individual": the strongest single dishes, best first — a few for a small
+  party, more for a large one. Prefer "bestseller"/"chefspecial", with variety
+  across course/cuisine, fitting the party and any note.
 - "combos": EXACTLY 3 complete sets, each a different mood (one comforting/
-  familiar, one lighter/fresher, one bolder/chef-driven). Size EACH combo to the
-  party per the scaling rules above.
-    * filters.course == "Full meal": span courses (starter(s) + main(s) +
-      dessert), and add ONE drink only if drink candidates are present.
-    * A single course chosen (e.g. only Starters/Desserts): make each combo a
-      sensible number of different dishes of that course for the party size.
+  familiar, one lighter/fresher, one bolder/chef-driven). Size and vary EACH
+  combo for the table using the reasoning above.
+    * filters.course == "Full meal": span courses (starters + mains + desserts,
+      scaled to the group) and include drinks — more than one kind for a larger
+      party — only when drink candidates are present.
+    * A single course chosen (e.g. only Starters/Desserts): pick a sensible
+      number of different dishes of that course for the party size.
 - Dishes MAY repeat across combos, but each combo's own items must be distinct.
 - Every "why" is concrete and inviting — name a flavour, texture, who it suits,
   or a portion hint for big groups. Never mention price. Never promise something
@@ -367,18 +370,20 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
         serve = f"easily serves your {party_size}" if d["serves"] >= party_size else "perfect for sharing"
         return f"{lead} — {heat}, {serve}."
 
-    # How many distinct dishes per course scales with the party, the way a real
-    # diner would order (1 person = a dish or two; a big group = a varied spread).
-    if party_size <= 1:
-        n_start, n_main, n_dess = 0, 1, 0
-    elif party_size <= 3:
-        n_start, n_main, n_dess = 1, 1, 1
-    elif party_size <= 6:
-        n_start, n_main, n_dess = 2, 3, 1
-    else:
-        n_start, n_main, n_dess = 3, 4, 2
+    # Variety scales smoothly with the group size (a deterministic stand-in for
+    # the LLM's reasoning): roughly one main per ~2 diners, with starters,
+    # desserts and drinks each given a proportional number of DIFFERENT options
+    # so a big table never ends up with one lone drink or dessert. Capped so we
+    # don't overflow a card, floored at 1 where the course applies.
+    n_main = max(1, math.ceil(party_size / 2))
+    n_start = max(1, round(party_size / 3))
+    n_dess = max(1, round(party_size / 4))
+    n_drink = max(1, round(party_size / 4))
+    n_main, n_start, n_dess, n_drink = min(n_main, 5), min(n_start, 4), min(n_dess, 3), min(n_drink, 3)
+    if party_size <= 1:  # a solo diner: a dish or two, not a spread
+        n_main, n_start, n_dess, n_drink = 1, 0, 0, 1
 
-    n_individual = 4 if party_size <= 3 else 6
+    n_individual = min(6, max(4, party_size))
     individual = [{**_dish_card(d), "why": why(d)} for d in ranked[:n_individual]]
     for dr in drinks[:1]:
         individual.append({**_dish_card(dr), "why": "A refreshing drink to start."})
@@ -406,7 +411,7 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
         # de-dup within a combo while preserving order
         seen, picks = set(), [p for p in picks if not (p["id"] in seen or seen.add(p["id"]))]
         if drinks:
-            picks = picks + take(drinks, i, 1)
+            picks = picks + take(drinks, i, n_drink)
         if not picks:
             continue
         big = party_size >= 7
