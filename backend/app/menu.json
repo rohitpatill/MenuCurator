@@ -2627,6 +2627,552 @@
         "sparkling water"
       ],
       "desc": "Chilled sparkling mineral water."
+    },
+    {
+      "id": "d103",
+      "name": "Single Malt Scotch (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 750,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "single malt scotch"
+      ],
+      "desc": "A smooth, aromatic single-malt Scotch — neat or on the rocks."
+    },
+    {
+      "id": "d104",
+      "name": "12-Year Blended Scotch (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 520,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "blended scotch"
+      ],
+      "desc": "Mellow aged blended Scotch with a warm finish."
+    },
+    {
+      "id": "d105",
+      "name": "Bourbon Whiskey (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 480,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "bourbon"
+      ],
+      "desc": "Sweet, oaky American bourbon."
+    },
+    {
+      "id": "d106",
+      "name": "Indian Single Malt (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 560,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "indian single malt"
+      ],
+      "desc": "Award-winning Indian single malt, rich and smooth."
+    },
+    {
+      "id": "d107",
+      "name": "House Whisky (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 300,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "blended whisky"
+      ],
+      "desc": "Easy-drinking house whisky, neat or with a mixer."
+    },
+    {
+      "id": "d108",
+      "name": "Premium Vodka (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 420,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "vodka"
+      ],
+      "desc": "Clean, crisp premium vodka."
+    },
+    {
+      "id": "d109",
+      "name": "Flavoured Vodka (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 440,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "flavoured vodka"
+      ],
+      "desc": "Citrus-infused vodka, lovely chilled."
+    },
+    {
+      "id": "d110",
+      "name": "London Dry Gin (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 440,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "gin"
+      ],
+      "desc": "Classic botanical gin, great with tonic."
+    },
+    {
+      "id": "d111",
+      "name": "Craft Small-Batch Gin (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 520,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "craft gin"
+      ],
+      "desc": "Aromatic small-batch gin with botanicals."
+    },
+    {
+      "id": "d112",
+      "name": "Aged Dark Rum (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 420,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "dark rum"
+      ],
+      "desc": "Rich, mellow aged rum."
+    },
+    {
+      "id": "d113",
+      "name": "White Rum (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 340,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "white rum"
+      ],
+      "desc": "Light white rum, neat or mixed."
+    },
+    {
+      "id": "d114",
+      "name": "Silver Tequila (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 460,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "tequila"
+      ],
+      "desc": "Crisp silver tequila with salt and lime."
+    },
+    {
+      "id": "d115",
+      "name": "Aged Anejo Tequila (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 620,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "anejo tequila"
+      ],
+      "desc": "Smooth, oak-aged sipping tequila."
+    },
+    {
+      "id": "d116",
+      "name": "French Brandy (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 460,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "brandy"
+      ],
+      "desc": "Warming brandy, a fine after-dinner pour."
+    },
+    {
+      "id": "d117",
+      "name": "Irish Whiskey (30ml)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 500,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "irish whiskey"
+      ],
+      "desc": "Triple-distilled, exceptionally smooth."
+    },
+    {
+      "id": "d118",
+      "name": "Lager (Pint)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 320,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "lager"
+      ],
+      "desc": "Crisp, chilled draught lager."
+    },
+    {
+      "id": "d119",
+      "name": "Premium Lager (Pint)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 380,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "premium lager"
+      ],
+      "desc": "Smooth premium imported lager."
+    },
+    {
+      "id": "d120",
+      "name": "Wheat Beer (Pint)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 360,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "wheat beer"
+      ],
+      "desc": "Cloudy, citrusy wheat beer."
+    },
+    {
+      "id": "d121",
+      "name": "Craft IPA (Pint)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 420,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "ipa"
+      ],
+      "desc": "Hoppy, aromatic India Pale Ale."
+    },
+    {
+      "id": "d122",
+      "name": "Stout (Pint)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 400,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "stout"
+      ],
+      "desc": "Dark, full-bodied stout with roasted notes."
+    },
+    {
+      "id": "d123",
+      "name": "Cider (Pint)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 360,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "apple cider"
+      ],
+      "desc": "Crisp, lightly sweet apple cider."
+    },
+    {
+      "id": "d124",
+      "name": "House Red Wine (Glass)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 450,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "red wine"
+      ],
+      "desc": "A smooth, medium-bodied red."
+    },
+    {
+      "id": "d125",
+      "name": "House White Wine (Glass)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 450,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "white wine"
+      ],
+      "desc": "A crisp, chilled white."
+    },
+    {
+      "id": "d126",
+      "name": "Rosé Wine (Glass)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 480,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "rose wine"
+      ],
+      "desc": "Light, refreshing dry rosé."
+    },
+    {
+      "id": "d127",
+      "name": "Sparkling Wine (Glass)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 550,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "sparkling wine"
+      ],
+      "desc": "Light, celebratory sparkling wine."
+    },
+    {
+      "id": "d128",
+      "name": "Red Wine (Bottle)",
+      "cuisine": "Bar",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 2200,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "spirit",
+      "available": true,
+      "ingredients": [
+        "red wine"
+      ],
+      "desc": "A full bottle of our house red to share."
     }
   ]
 }
