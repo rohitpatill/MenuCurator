@@ -1,0 +1,2632 @@
+{
+  "restaurant": "Vermillion",
+  "tagline": "Kitchen & Bar",
+  "currency": "INR",
+  "dishes": [
+    {
+      "id": "d001",
+      "name": "Tandoori Malai Broccoli",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 420,
+      "serves": 2,
+      "pieces": 8,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "broccoli",
+        "cream cheese",
+        "hung curd",
+        "mild spices"
+      ],
+      "desc": "Florets in a smoky cream-cheese marinade, finished in the tandoor."
+    },
+    {
+      "id": "d002",
+      "name": "Galouti Kebab",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 540,
+      "serves": 2,
+      "pieces": 6,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "minced mutton",
+        "saffron",
+        "rose",
+        "garam masala"
+      ],
+      "desc": "Melt-in-the-mouth minced mutton kebabs with saffron and warm spice."
+    },
+    {
+      "id": "d003",
+      "name": "Paneer Tikka",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 380,
+      "serves": 3,
+      "pieces": 8,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "paneer",
+        "yoghurt",
+        "capsicum",
+        "onion"
+      ],
+      "desc": "Char-grilled cottage cheese cubes in a spiced yoghurt marinade."
+    },
+    {
+      "id": "d004",
+      "name": "Chicken Tikka",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 440,
+      "serves": 3,
+      "pieces": 8,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "yoghurt",
+        "ginger-garlic",
+        "spices"
+      ],
+      "desc": "Boneless chicken char-grilled in a classic tandoori marinade."
+    },
+    {
+      "id": "d005",
+      "name": "Hara Bhara Kebab",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 320,
+      "serves": 3,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "spinach",
+        "peas",
+        "potato",
+        "spices"
+      ],
+      "desc": "Spinach-and-pea patties, crisp outside and soft within."
+    },
+    {
+      "id": "d006",
+      "name": "Amritsari Fish Tikka",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 580,
+      "serves": 2,
+      "pieces": 6,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "fish"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "fish",
+        "carom seeds",
+        "gram flour",
+        "spices"
+      ],
+      "desc": "Carom-spiced fish, golden and flaky from the tandoor."
+    },
+    {
+      "id": "d007",
+      "name": "Tandoori Aloo",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": true,
+      "spice": "Mild",
+      "price": 300,
+      "serves": 3,
+      "pieces": 8,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "baby potato",
+        "hung curd",
+        "spices"
+      ],
+      "desc": "Stuffed baby potatoes roasted in the tandoor — Jain-friendly."
+    },
+    {
+      "id": "d008",
+      "name": "Mutton Seekh Kebab",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 560,
+      "serves": 3,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "minced mutton",
+        "green chilli",
+        "onion",
+        "spices"
+      ],
+      "desc": "Spiced minced-mutton skewers grilled over charcoal."
+    },
+    {
+      "id": "d009",
+      "name": "Dahi ke Kebab",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 360,
+      "serves": 2,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "hung curd",
+        "cashew",
+        "cardamom"
+      ],
+      "desc": "Delicate hung-curd kebabs, creamy and lightly spiced."
+    },
+    {
+      "id": "d010",
+      "name": "Tandoori Prawns",
+      "cuisine": "Indian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 720,
+      "serves": 2,
+      "pieces": 6,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "shellfish"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "prawns",
+        "yoghurt",
+        "carom",
+        "spices"
+      ],
+      "desc": "Jumbo prawns marinated and seared in the tandoor."
+    },
+    {
+      "id": "d011",
+      "name": "Dal Vermillion",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 480,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "black lentils",
+        "butter",
+        "tomato",
+        "cream"
+      ],
+      "desc": "Black lentils simmered overnight with butter and tomato — our signature."
+    },
+    {
+      "id": "d012",
+      "name": "Butter Chicken",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 560,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "tomato",
+        "butter",
+        "cream",
+        "fenugreek"
+      ],
+      "desc": "Tandoori chicken in a velvety tomato-and-butter gravy."
+    },
+    {
+      "id": "d013",
+      "name": "Paneer Lababdar",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 460,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "paneer",
+        "cashew",
+        "tomato",
+        "cream"
+      ],
+      "desc": "Soft paneer in a rich cashew-tomato gravy."
+    },
+    {
+      "id": "d014",
+      "name": "Rogan Josh",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 620,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "lamb",
+        "kashmiri chilli",
+        "yoghurt",
+        "spices"
+      ],
+      "desc": "Slow-cooked lamb in a Kashmiri chilli and yoghurt gravy."
+    },
+    {
+      "id": "d015",
+      "name": "Kadai Paneer",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 440,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "paneer",
+        "bell pepper",
+        "tomato",
+        "coriander seed"
+      ],
+      "desc": "Paneer tossed with peppers in a robust kadai masala."
+    },
+    {
+      "id": "d016",
+      "name": "Chicken Chettinad",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 540,
+      "serves": 3,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "black pepper",
+        "curry leaf",
+        "coconut"
+      ],
+      "desc": "Fiery South-Indian chicken with pepper and curry leaf."
+    },
+    {
+      "id": "d017",
+      "name": "Palak Paneer",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 420,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "spinach",
+        "paneer",
+        "garlic",
+        "cream"
+      ],
+      "desc": "Cottage cheese in a smooth spinach gravy."
+    },
+    {
+      "id": "d018",
+      "name": "Jain Paneer Butter Masala",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": true,
+      "spice": "Mild",
+      "price": 450,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "paneer",
+        "tomato",
+        "cashew",
+        "butter"
+      ],
+      "desc": "Classic butter masala prepared Jain — no onion or garlic."
+    },
+    {
+      "id": "d019",
+      "name": "Mutton Rogan Curry",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 660,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "mutton",
+        "onion",
+        "tomato",
+        "whole spices"
+      ],
+      "desc": "Home-style mutton curry, deeply spiced and slow-cooked."
+    },
+    {
+      "id": "d020",
+      "name": "Malai Kofta",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 460,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "potato",
+        "paneer",
+        "cashew",
+        "cream"
+      ],
+      "desc": "Soft koftas in a mildly sweet cashew-cream gravy."
+    },
+    {
+      "id": "d021",
+      "name": "Prawn Curry",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 680,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "shellfish"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "prawns",
+        "coconut",
+        "kokum",
+        "spices"
+      ],
+      "desc": "Coastal prawn curry with coconut and a tang of kokum."
+    },
+    {
+      "id": "d022",
+      "name": "Chana Masala",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 360,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chickpeas",
+        "onion",
+        "tomato",
+        "spices"
+      ],
+      "desc": "Chickpeas in a tangy, spiced onion-tomato gravy."
+    },
+    {
+      "id": "d023",
+      "name": "Assorted Bread Basket",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 260,
+      "serves": 3,
+      "pieces": 4,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "wheat flour",
+        "butter"
+      ],
+      "desc": "Butter naan, tandoori roti and laccha paratha."
+    },
+    {
+      "id": "d024",
+      "name": "Garlic Naan",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 90,
+      "serves": 1,
+      "pieces": 1,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "flour",
+        "garlic",
+        "butter"
+      ],
+      "desc": "Soft naan brushed with garlic butter."
+    },
+    {
+      "id": "d025",
+      "name": "Hyderabadi Veg Biryani",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 420,
+      "serves": 2,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "basmati",
+        "vegetables",
+        "saffron",
+        "fried onion"
+      ],
+      "desc": "Fragrant dum biryani layered with vegetables and saffron."
+    },
+    {
+      "id": "d026",
+      "name": "Hyderabadi Chicken Biryani",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 520,
+      "serves": 2,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "basmati",
+        "chicken",
+        "saffron",
+        "fried onion"
+      ],
+      "desc": "Slow-cooked dum biryani with marinated chicken."
+    },
+    {
+      "id": "d027",
+      "name": "Mutton Biryani",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 620,
+      "serves": 2,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "basmati",
+        "mutton",
+        "saffron",
+        "whole spices"
+      ],
+      "desc": "Royal mutton dum biryani, rich and aromatic."
+    },
+    {
+      "id": "d028",
+      "name": "Jeera Rice",
+      "cuisine": "Indian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": true,
+      "spice": "Mild",
+      "price": 220,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "basmati",
+        "cumin",
+        "ghee"
+      ],
+      "desc": "Steamed basmati tempered with cumin."
+    },
+    {
+      "id": "d029",
+      "name": "Saffron Pista Kulfi",
+      "cuisine": "Indian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 240,
+      "serves": 1,
+      "pieces": 2,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "milk",
+        "saffron",
+        "pistachio",
+        "sugar"
+      ],
+      "desc": "Slow-churned saffron kulfi with crushed pistachio."
+    },
+    {
+      "id": "d030",
+      "name": "Gulab Jamun",
+      "cuisine": "Indian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 200,
+      "serves": 2,
+      "pieces": 2,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "khoya",
+        "flour",
+        "sugar syrup"
+      ],
+      "desc": "Warm milk dumplings soaked in cardamom syrup."
+    },
+    {
+      "id": "d031",
+      "name": "Gajar Ka Halwa",
+      "cuisine": "Indian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 260,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "carrot",
+        "milk",
+        "ghee",
+        "nuts"
+      ],
+      "desc": "Slow-cooked carrot halwa finished with ghee and nuts."
+    },
+    {
+      "id": "d032",
+      "name": "Rasmalai",
+      "cuisine": "Indian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 240,
+      "serves": 2,
+      "pieces": 2,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chenna",
+        "milk",
+        "saffron",
+        "pistachio"
+      ],
+      "desc": "Soft cottage-cheese discs in saffron-cardamom milk."
+    },
+    {
+      "id": "d033",
+      "name": "Crispy Corn Chilli",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 360,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "sweet corn",
+        "bell pepper",
+        "soy",
+        "chilli"
+      ],
+      "desc": "Golden corn tossed with peppers and a sweet-chilli glaze."
+    },
+    {
+      "id": "d034",
+      "name": "Chilli Paneer",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 380,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "paneer",
+        "capsicum",
+        "soy",
+        "chilli"
+      ],
+      "desc": "Crispy paneer in a fiery indo-chinese sauce."
+    },
+    {
+      "id": "d035",
+      "name": "Chilli Chicken",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 420,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "capsicum",
+        "soy",
+        "chilli"
+      ],
+      "desc": "Wok-tossed chicken in a hot garlic-chilli sauce."
+    },
+    {
+      "id": "d036",
+      "name": "Veg Spring Rolls",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 280,
+      "serves": 2,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "cabbage",
+        "carrot",
+        "noodles",
+        "wrapper"
+      ],
+      "desc": "Crisp rolls packed with shredded vegetables."
+    },
+    {
+      "id": "d037",
+      "name": "Crispy Lamb",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 560,
+      "serves": 3,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "soy"
+      ],
+      "type": "food",
+      "available": false,
+      "ingredients": [
+        "lamb",
+        "chilli",
+        "spring onion",
+        "soy"
+      ],
+      "desc": "Shredded lamb fried crisp in a sweet-hot glaze."
+    },
+    {
+      "id": "d038",
+      "name": "Chicken Lollipop",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 440,
+      "serves": 3,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken wings",
+        "chilli",
+        "garlic"
+      ],
+      "desc": "Frenched chicken winglets in a spicy red coating."
+    },
+    {
+      "id": "d039",
+      "name": "Honey Chilli Potato",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 320,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "potato",
+        "honey",
+        "chilli",
+        "sesame"
+      ],
+      "desc": "Crisp potato batons glazed sweet, hot and sesame-flecked."
+    },
+    {
+      "id": "d040",
+      "name": "Prawn Tempura",
+      "cuisine": "Chinese",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 620,
+      "serves": 2,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "shellfish",
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "prawns",
+        "tempura batter"
+      ],
+      "desc": "Light, crisp battered prawns with dipping sauce."
+    },
+    {
+      "id": "d041",
+      "name": "Chilli-Garlic Hakka Noodles",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 380,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "noodles",
+        "garlic",
+        "chilli",
+        "vegetables"
+      ],
+      "desc": "Wok-tossed noodles with garlic, chilli and crunchy veg."
+    },
+    {
+      "id": "d042",
+      "name": "Veg Fried Rice",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 320,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "rice",
+        "vegetables",
+        "soy"
+      ],
+      "desc": "Classic wok-fried rice with crisp vegetables."
+    },
+    {
+      "id": "d043",
+      "name": "Chicken Fried Rice",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 380,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "rice",
+        "chicken",
+        "egg",
+        "soy"
+      ],
+      "desc": "Fried rice with chicken and egg."
+    },
+    {
+      "id": "d044",
+      "name": "Kung Pao Chicken",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 480,
+      "serves": 3,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "nut",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "peanut",
+        "dried chilli",
+        "soy"
+      ],
+      "desc": "Sichuan stir-fry with peanuts and dried chilli."
+    },
+    {
+      "id": "d045",
+      "name": "Veg Manchurian Gravy",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 360,
+      "serves": 3,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "mixed veg",
+        "soy",
+        "garlic",
+        "cornflour"
+      ],
+      "desc": "Veg dumplings in a savoury garlic-soy gravy."
+    },
+    {
+      "id": "d046",
+      "name": "Schezwan Noodles",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 400,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "noodles",
+        "schezwan",
+        "vegetables"
+      ],
+      "desc": "Noodles tossed in a fiery schezwan sauce."
+    },
+    {
+      "id": "d047",
+      "name": "Fish in Black Bean Sauce",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 640,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "fish",
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "fish",
+        "black bean",
+        "ginger",
+        "soy"
+      ],
+      "desc": "Steamed fish fillets in a savoury black-bean sauce."
+    },
+    {
+      "id": "d048",
+      "name": "Mapo Tofu",
+      "cuisine": "Chinese",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 420,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "soy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "tofu",
+        "chilli bean",
+        "sichuan pepper"
+      ],
+      "desc": "Silken tofu in a numbing, spicy Sichuan sauce."
+    },
+    {
+      "id": "d049",
+      "name": "Darsaan with Ice Cream",
+      "cuisine": "Chinese",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 280,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "fried noodles",
+        "honey",
+        "sesame",
+        "ice cream"
+      ],
+      "desc": "Honey-glazed crisp noodles with vanilla ice cream."
+    },
+    {
+      "id": "d050",
+      "name": "Caesar Salad",
+      "cuisine": "Continental",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 380,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "romaine",
+        "parmesan",
+        "croutons",
+        "caesar dressing"
+      ],
+      "desc": "Crisp romaine, parmesan and herbed croutons."
+    },
+    {
+      "id": "d051",
+      "name": "Grilled Chicken Caesar",
+      "cuisine": "Continental",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 460,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "romaine",
+        "parmesan",
+        "croutons"
+      ],
+      "desc": "Caesar salad topped with grilled chicken."
+    },
+    {
+      "id": "d052",
+      "name": "Bruschetta",
+      "cuisine": "Continental",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 320,
+      "serves": 2,
+      "pieces": 4,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "sourdough",
+        "tomato",
+        "basil",
+        "olive oil"
+      ],
+      "desc": "Toasted sourdough with tomato, basil and olive oil."
+    },
+    {
+      "id": "d053",
+      "name": "Mushroom Soup",
+      "cuisine": "Continental",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 280,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "mushroom",
+        "cream",
+        "thyme"
+      ],
+      "desc": "Velvety cream of mushroom with thyme."
+    },
+    {
+      "id": "d054",
+      "name": "Crumbed Fish Fingers",
+      "cuisine": "Continental",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 480,
+      "serves": 2,
+      "pieces": 6,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "fish",
+        "gluten",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "fish",
+        "breadcrumb",
+        "tartare"
+      ],
+      "desc": "Crisp-crumbed fish fingers with tartare sauce."
+    },
+    {
+      "id": "d055",
+      "name": "Stuffed Mushrooms",
+      "cuisine": "Continental",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 360,
+      "serves": 2,
+      "pieces": 6,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "button mushroom",
+        "cheese",
+        "herbs"
+      ],
+      "desc": "Button mushrooms baked with herbed cheese."
+    },
+    {
+      "id": "d056",
+      "name": "Grilled Chicken Steak",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 620,
+      "serves": 1,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken breast",
+        "herb butter",
+        "vegetables"
+      ],
+      "desc": "Herb-buttered chicken steak with sautéed vegetables."
+    },
+    {
+      "id": "d057",
+      "name": "Grilled Fish with Lemon Butter",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 720,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "fish",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "fish fillet",
+        "lemon",
+        "butter",
+        "capers"
+      ],
+      "desc": "Pan-seared fish in a lemon-butter sauce."
+    },
+    {
+      "id": "d058",
+      "name": "Penne Arrabbiata",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Spicy",
+      "price": 420,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "penne",
+        "tomato",
+        "chilli",
+        "garlic"
+      ],
+      "desc": "Penne in a spicy tomato-and-garlic sauce."
+    },
+    {
+      "id": "d059",
+      "name": "Penne Alfredo",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 440,
+      "serves": 2,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "penne",
+        "cream",
+        "parmesan",
+        "garlic"
+      ],
+      "desc": "Creamy parmesan alfredo with penne."
+    },
+    {
+      "id": "d060",
+      "name": "Chicken Alfredo Pasta",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 520,
+      "serves": 2,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "penne",
+        "chicken",
+        "cream",
+        "parmesan"
+      ],
+      "desc": "Alfredo pasta with grilled chicken."
+    },
+    {
+      "id": "d061",
+      "name": "Margherita Pizza",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 460,
+      "serves": 2,
+      "pieces": 8,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "pizza base",
+        "tomato",
+        "mozzarella",
+        "basil"
+      ],
+      "desc": "Classic thin-crust with tomato, mozzarella and basil."
+    },
+    {
+      "id": "d062",
+      "name": "Pepperoni Pizza",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 560,
+      "serves": 2,
+      "pieces": 8,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "pizza base",
+        "pepperoni",
+        "mozzarella"
+      ],
+      "desc": "Loaded with pepperoni and bubbling mozzarella."
+    },
+    {
+      "id": "d063",
+      "name": "Vegetable Lasagna",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 480,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "pasta sheets",
+        "vegetables",
+        "bechamel",
+        "cheese"
+      ],
+      "desc": "Layered pasta with roasted veg and béchamel."
+    },
+    {
+      "id": "d064",
+      "name": "Lamb Shepherd's Pie",
+      "cuisine": "Continental",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 640,
+      "serves": 2,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "minced lamb",
+        "potato",
+        "peas",
+        "gravy"
+      ],
+      "desc": "Minced lamb topped with creamy mash, baked golden."
+    },
+    {
+      "id": "d065",
+      "name": "Molten Chocolate Fondant",
+      "cuisine": "Continental",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 320,
+      "serves": 1,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": true,
+      "allergens": [
+        "dairy",
+        "gluten",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "dark chocolate",
+        "egg",
+        "butter",
+        "flour"
+      ],
+      "desc": "Warm dark-chocolate cake with a flowing centre and vanilla ice-cream."
+    },
+    {
+      "id": "d066",
+      "name": "New York Cheesecake",
+      "cuisine": "Continental",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 340,
+      "serves": 1,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "cream cheese",
+        "biscuit base",
+        "vanilla"
+      ],
+      "desc": "Dense, creamy baked cheesecake."
+    },
+    {
+      "id": "d067",
+      "name": "Tiramisu",
+      "cuisine": "Continental",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 360,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten",
+        "egg"
+      ],
+      "type": "food",
+      "available": false,
+      "ingredients": [
+        "mascarpone",
+        "coffee",
+        "ladyfinger",
+        "cocoa"
+      ],
+      "desc": "Coffee-soaked sponge layered with mascarpone."
+    },
+    {
+      "id": "d068",
+      "name": "Crème Brûlée",
+      "cuisine": "Continental",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 340,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "cream",
+        "egg yolk",
+        "vanilla",
+        "sugar"
+      ],
+      "desc": "Vanilla custard under a crisp caramelised top."
+    },
+    {
+      "id": "d069",
+      "name": "Burrata & Heirloom Tomato",
+      "cuisine": "Italian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": true,
+      "spice": "Mild",
+      "price": 620,
+      "serves": 2,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "burrata",
+        "heirloom tomato",
+        "basil",
+        "olive oil"
+      ],
+      "desc": "Creamy burrata over heirloom tomato, basil oil and balsamic."
+    },
+    {
+      "id": "d070",
+      "name": "Antipasti Platter",
+      "cuisine": "Italian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 680,
+      "serves": 3,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "cured meats",
+        "olives",
+        "cheese",
+        "grissini"
+      ],
+      "desc": "Cured meats, olives and cheeses to share."
+    },
+    {
+      "id": "d071",
+      "name": "Garlic Bread with Cheese",
+      "cuisine": "Italian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 260,
+      "serves": 2,
+      "pieces": 6,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "baguette",
+        "garlic",
+        "mozzarella"
+      ],
+      "desc": "Toasted baguette with garlic butter and melted cheese."
+    },
+    {
+      "id": "d072",
+      "name": "Calamari Fritti",
+      "cuisine": "Italian",
+      "course": "Starter",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 560,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "shellfish",
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "squid",
+        "semolina",
+        "lemon aioli"
+      ],
+      "desc": "Crisp-fried calamari with lemon aioli."
+    },
+    {
+      "id": "d073",
+      "name": "Caprese Salad",
+      "cuisine": "Italian",
+      "course": "Starter",
+      "diet": "veg",
+      "jain": true,
+      "spice": "Mild",
+      "price": 420,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "mozzarella",
+        "tomato",
+        "basil",
+        "olive oil"
+      ],
+      "desc": "Fresh mozzarella, tomato and basil — Jain-friendly."
+    },
+    {
+      "id": "d074",
+      "name": "Wild Mushroom Truffle Risotto",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 680,
+      "serves": 2,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "arborio rice",
+        "wild mushroom",
+        "truffle",
+        "parmesan"
+      ],
+      "desc": "Arborio rice, wild mushrooms and a whisper of truffle."
+    },
+    {
+      "id": "d075",
+      "name": "Spaghetti Aglio e Olio",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 420,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "spaghetti",
+        "garlic",
+        "chilli flakes",
+        "olive oil"
+      ],
+      "desc": "Spaghetti with garlic, chilli and olive oil."
+    },
+    {
+      "id": "d076",
+      "name": "Spaghetti Carbonara",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 520,
+      "serves": 2,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "spaghetti",
+        "pancetta",
+        "egg",
+        "parmesan"
+      ],
+      "desc": "Silky carbonara with pancetta and parmesan."
+    },
+    {
+      "id": "d077",
+      "name": "Penne Pesto",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 440,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy",
+        "nut"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "penne",
+        "basil pesto",
+        "pine nut",
+        "parmesan"
+      ],
+      "desc": "Penne tossed in fresh basil-pine-nut pesto."
+    },
+    {
+      "id": "d078",
+      "name": "Chicken Parmigiana",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 620,
+      "serves": 2,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy",
+        "egg"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "chicken",
+        "tomato",
+        "mozzarella",
+        "breadcrumb"
+      ],
+      "desc": "Crumbed chicken baked with tomato and mozzarella."
+    },
+    {
+      "id": "d079",
+      "name": "Quattro Formaggi Pizza",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 580,
+      "serves": 2,
+      "pieces": 8,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "pizza base",
+        "four cheeses"
+      ],
+      "desc": "Four-cheese pizza, rich and indulgent."
+    },
+    {
+      "id": "d080",
+      "name": "Seafood Marinara Pasta",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "nonveg",
+      "jain": false,
+      "spice": "Medium",
+      "price": 720,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "shellfish",
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "linguine",
+        "prawns",
+        "squid",
+        "tomato"
+      ],
+      "desc": "Linguine with mixed seafood in a marinara sauce."
+    },
+    {
+      "id": "d081",
+      "name": "Gnocchi Sorrentina",
+      "cuisine": "Italian",
+      "course": "Main",
+      "diet": "veg",
+      "jain": false,
+      "spice": "Mild",
+      "price": 520,
+      "serves": 2,
+      "pieces": null,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "gluten",
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "potato gnocchi",
+        "tomato",
+        "mozzarella",
+        "basil"
+      ],
+      "desc": "Pillowy gnocchi baked in tomato and mozzarella."
+    },
+    {
+      "id": "d082",
+      "name": "Panna Cotta",
+      "cuisine": "Italian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 320,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "cream",
+        "vanilla",
+        "berry coulis"
+      ],
+      "desc": "Set vanilla cream with a berry coulis."
+    },
+    {
+      "id": "d083",
+      "name": "Affogato",
+      "cuisine": "Italian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 260,
+      "serves": 1,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "vanilla gelato",
+        "espresso"
+      ],
+      "desc": "Vanilla gelato drowned in a shot of hot espresso."
+    },
+    {
+      "id": "d084",
+      "name": "Cannoli",
+      "cuisine": "Italian",
+      "course": "Dessert",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 300,
+      "serves": 1,
+      "pieces": 2,
+      "tag": null,
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "gluten"
+      ],
+      "type": "food",
+      "available": true,
+      "ingredients": [
+        "pastry shell",
+        "ricotta",
+        "chocolate chip"
+      ],
+      "desc": "Crisp shells filled with sweet ricotta."
+    },
+    {
+      "id": "d085",
+      "name": "Virgin Mojito",
+      "cuisine": "Mocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 220,
+      "serves": 1,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": true,
+      "allergens": [],
+      "type": "mocktail",
+      "available": true,
+      "ingredients": [
+        "mint",
+        "lime",
+        "soda",
+        "sugar"
+      ],
+      "desc": "A crisp, refreshing lime-and-mint cooler."
+    },
+    {
+      "id": "d086",
+      "name": "Fresh Lime Soda",
+      "cuisine": "Mocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 120,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "mocktail",
+      "available": true,
+      "ingredients": [
+        "lime",
+        "soda",
+        "sugar/salt"
+      ],
+      "desc": "Classic sweet-or-salted lime soda."
+    },
+    {
+      "id": "d087",
+      "name": "Blue Lagoon",
+      "cuisine": "Mocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 240,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "mocktail",
+      "available": true,
+      "ingredients": [
+        "blue curacao syrup",
+        "lemon",
+        "soda"
+      ],
+      "desc": "A bright, citrusy blue cooler."
+    },
+    {
+      "id": "d088",
+      "name": "Cranberry Cooler",
+      "cuisine": "Mocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 240,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "mocktail",
+      "available": true,
+      "ingredients": [
+        "cranberry",
+        "lime",
+        "soda"
+      ],
+      "desc": "Tart cranberry over ice with a citrus lift."
+    },
+    {
+      "id": "d089",
+      "name": "Virgin Pina Colada",
+      "cuisine": "Mocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 280,
+      "serves": 1,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": false,
+      "allergens": [
+        "dairy",
+        "nut"
+      ],
+      "type": "mocktail",
+      "available": true,
+      "ingredients": [
+        "pineapple",
+        "coconut cream",
+        "ice"
+      ],
+      "desc": "Creamy pineapple-and-coconut blend."
+    },
+    {
+      "id": "d090",
+      "name": "Masala Chaas",
+      "cuisine": "Mocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 110,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "mocktail",
+      "available": true,
+      "ingredients": [
+        "yoghurt",
+        "cumin",
+        "mint",
+        "salt"
+      ],
+      "desc": "Spiced buttermilk to cool the palate."
+    },
+    {
+      "id": "d091",
+      "name": "Smoked Old Fashioned",
+      "cuisine": "Cocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 540,
+      "serves": 1,
+      "pieces": null,
+      "tag": "chefspecial",
+      "nog": true,
+      "allergens": [],
+      "type": "cocktail",
+      "available": true,
+      "ingredients": [
+        "bourbon",
+        "bitters",
+        "sugar",
+        "smoke"
+      ],
+      "desc": "A slow-sipping classic, gently smoked."
+    },
+    {
+      "id": "d092",
+      "name": "Classic Margarita",
+      "cuisine": "Cocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 480,
+      "serves": 1,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": true,
+      "allergens": [],
+      "type": "cocktail",
+      "available": true,
+      "ingredients": [
+        "tequila",
+        "triple sec",
+        "lime",
+        "salt"
+      ],
+      "desc": "Tequila, lime and a salted rim."
+    },
+    {
+      "id": "d093",
+      "name": "Mojito",
+      "cuisine": "Cocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 460,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "cocktail",
+      "available": true,
+      "ingredients": [
+        "white rum",
+        "mint",
+        "lime",
+        "soda"
+      ],
+      "desc": "Rum, mint and lime over crushed ice."
+    },
+    {
+      "id": "d094",
+      "name": "Cosmopolitan",
+      "cuisine": "Cocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 500,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "cocktail",
+      "available": true,
+      "ingredients": [
+        "vodka",
+        "triple sec",
+        "cranberry",
+        "lime"
+      ],
+      "desc": "Vodka, cranberry and a citrus snap."
+    },
+    {
+      "id": "d095",
+      "name": "Whiskey Sour",
+      "cuisine": "Cocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 520,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "egg"
+      ],
+      "type": "cocktail",
+      "available": true,
+      "ingredients": [
+        "whiskey",
+        "lemon",
+        "sugar",
+        "egg white"
+      ],
+      "desc": "Whiskey, lemon and a silky foam top."
+    },
+    {
+      "id": "d096",
+      "name": "Negroni",
+      "cuisine": "Cocktail",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": false,
+      "spice": null,
+      "price": 540,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "cocktail",
+      "available": true,
+      "ingredients": [
+        "gin",
+        "campari",
+        "sweet vermouth"
+      ],
+      "desc": "Equal-parts gin, Campari and vermouth — bittersweet."
+    },
+    {
+      "id": "d097",
+      "name": "Masala Chai",
+      "cuisine": "Beverage",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 90,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "beverage",
+      "available": true,
+      "ingredients": [
+        "tea",
+        "milk",
+        "ginger",
+        "cardamom"
+      ],
+      "desc": "Spiced Indian milk tea."
+    },
+    {
+      "id": "d098",
+      "name": "Filter Coffee",
+      "cuisine": "Beverage",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 110,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "beverage",
+      "available": true,
+      "ingredients": [
+        "coffee",
+        "milk"
+      ],
+      "desc": "Strong South-Indian filter coffee."
+    },
+    {
+      "id": "d099",
+      "name": "Cappuccino",
+      "cuisine": "Beverage",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 160,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "beverage",
+      "available": true,
+      "ingredients": [
+        "espresso",
+        "steamed milk"
+      ],
+      "desc": "Espresso topped with foamed milk."
+    },
+    {
+      "id": "d100",
+      "name": "Cold Coffee",
+      "cuisine": "Beverage",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 200,
+      "serves": 1,
+      "pieces": null,
+      "tag": "bestseller",
+      "nog": true,
+      "allergens": [
+        "dairy"
+      ],
+      "type": "beverage",
+      "available": true,
+      "ingredients": [
+        "coffee",
+        "milk",
+        "ice cream"
+      ],
+      "desc": "Chilled, frothy blended coffee."
+    },
+    {
+      "id": "d101",
+      "name": "Fresh Orange Juice",
+      "cuisine": "Beverage",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 180,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "beverage",
+      "available": true,
+      "ingredients": [
+        "orange"
+      ],
+      "desc": "Freshly squeezed orange juice."
+    },
+    {
+      "id": "d102",
+      "name": "Sparkling Water",
+      "cuisine": "Beverage",
+      "course": "Drink",
+      "diet": "veg",
+      "jain": true,
+      "spice": null,
+      "price": 150,
+      "serves": 1,
+      "pieces": null,
+      "tag": null,
+      "nog": true,
+      "allergens": [],
+      "type": "beverage",
+      "available": true,
+      "ingredients": [
+        "sparkling water"
+      ],
+      "desc": "Chilled sparkling mineral water."
+    }
+  ]
+}
