@@ -50,8 +50,6 @@ export default function App() {
         )}
         {screen === "refine" && <Refine picked={menu.dishes.filter((d) => a.picks[d.id])} chat={a.refineChat} typing={a.refineTyping} />}
         {screen === "dish" && a.dish && <Dish dish={a.dish} chat={a.chat} typing={a.dishTyping} />}
-
-        {a.busy && <Busy text={a.busyText} />}
       </div>
 
       {screen === "filter" && (
@@ -82,6 +80,8 @@ export default function App() {
       {screen === "refine" && (
         <ChatBar suggested={SUGGESTED_REFINE_QS} onChip={(q) => a.askRefine(q)} value={a.refineInput} onChange={a.setRefineInput} onSend={a.sendRefine} placeholder="Ask about your picks…" />
       )}
+
+      {a.busy && <Busy text={a.busyText} />}
     </div>
   );
 }

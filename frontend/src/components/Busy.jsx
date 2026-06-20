@@ -5,9 +5,9 @@ export default function Busy({ text }) {
   return (
     <div
       style={{
-        position: "absolute",
+        position: "fixed",
         inset: 0,
-        zIndex: 6,
+        zIndex: 50,
         background: "rgba(246,241,232,.86)",
         backdropFilter: "blur(3px)",
         display: "flex",
