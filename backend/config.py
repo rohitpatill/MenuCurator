@@ -37,5 +37,5 @@ CORS_ORIGINS: list[str] = [
 ]
 
 # Restaurant identity (shown in the UI header).
-RESTAURANT_NAME: str = os.environ.get("RESTAURANT_NAME", "Vermillion")
-RESTAURANT_TAGLINE: str = os.environ.get("RESTAURANT_TAGLINE", "Kitchen & Bar")
+RESTAURANT_NAME: str = os.environ.get("RESTAURANT_NAME", "Marigold")
+RESTAURANT_TAGLINE: str = os.environ.get("RESTAURANT_TAGLINE", "Flavours, curated")

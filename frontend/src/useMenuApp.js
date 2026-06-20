@@ -11,7 +11,7 @@ export function useMenuApp() {
   const [busy, setBusy] = useState(null);
   const [busyText, setBusyText] = useState("");
 
-  const [menu, setMenu] = useState({ restaurant: "Vermillion", tagline: "Kitchen & Bar", dishes: [] });
+  const [menu, setMenu] = useState({ restaurant: "Marigold", tagline: "Flavours, curated", dishes: [] });
 
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [extras, setExtras] = useState({});
