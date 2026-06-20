@@ -61,25 +61,35 @@ OUTPUT SHAPE (exactly this)
 }
 
 THINK LIKE A REAL PERSON ORDERING FOR THIS TABLE
-This is the most important rule. Picture "party_size" real people sitting down
-together and order the way a thoughtful host actually would. Reason from common
-sense — do NOT apply a fixed dish count.
-- A bigger table needs MORE variety across EVERY part of the meal: more
-  starters, more mains, AND a real choice of drinks and desserts — roughly one
-  different drink and one different dessert per 2-3 people (so a table of 8 has
-  about 3-4 drink options and 3-4 desserts, not one or two token items). Nobody
-  shares a single drink across a big group. A solo diner wants just a dish or
-  two, not a feast.
-- Use each dish's "serves" against "party_size" to judge how many distinct
-  dishes are enough to actually feed and satisfy the group. If one portion of a
-  popular dish won't feed everyone, say so in the "why" in plain words (e.g.
-  "you'll want a couple of portions of this for the group") — never add quantity
-  fields; we only suggest.
-- Balance the spread sensibly: enough food, a sensible mix of proteins/cuisines,
-  and — when drinks/desserts are available — a VARIETY of them proportional to
-  the group, not just one token item.
-Always ask yourself: "If I were ordering this for N people, would this feel
-right, or too little / too much?" Adjust until it feels right.
+Picture "party_size" real people sitting down together and order the way a
+thoughtful host would for a group THAT SIZE. A group does NOT share one drink or
+one dessert — everyone wants choice. A solo diner wants just a dish or two.
+
+MANDATORY MINIMUM VARIETY PER COMBO — THIS IS NOT OPTIONAL
+The input "min_per_combo" tells you the MINIMUM number of DISTINCT dishes each
+full-meal combo must contain for each course, computed for this exact party:
+  { "starters": S, "mains": M, "desserts": D, "drinks": K }
+Rules you MUST follow for EVERY combo (when filters.course is "Full meal"):
+  - Include AT LEAST "starters" distinct starter dishes.
+  - Include AT LEAST "mains" distinct main dishes.
+  - Include AT LEAST "desserts" distinct dessert dishes.
+  - Include AT LEAST "drinks" distinct drink dishes — but ONLY if drink
+    candidates exist in "candidates"; if "drinks" is 0, add no drinks.
+  - You may include MORE than the minimum, never fewer. Different combos should
+    feature DIFFERENT dishes so the three sets don't look identical.
+  - The ONLY reason to fall below a minimum is the budget cap (see HARD RULES):
+    if you truly cannot fit the minimum within "budget_total_cap", get as close
+    as the budget allows — but exhaust cheaper options first (e.g. a ₹110 soft
+    drink, an inexpensive dessert) before dropping a whole course's variety.
+WORKED EXAMPLE: party of 8 with drinks available and min_per_combo
+{starters:3, mains:4, desserts:3, drinks:3} → each combo must list at least 3
+different starters, 4 different mains, 3 different desserts and 3 different
+drinks. Two drinks for 8 people is WRONG — it must be at least 3.
+
+Beyond the minimums, use each dish's "serves" vs "party_size" to judge if the
+food quantity actually feeds the group; if one portion of a popular dish won't,
+say so in the "why" in plain words ("you'll want a couple of portions for the
+group") — never add quantity fields; we only suggest.
 
 DO NOT recommend breads/naan/roti (a side accompaniment, not a decision). If any
 bread-like dish is in candidates, leave it out — diners add bread by default.
@@ -89,13 +99,11 @@ HOW TO CHOOSE
   party, more for a large one. Prefer "bestseller"/"chefspecial", with variety
   across course/cuisine, fitting the party and any note.
 - "combos": EXACTLY 3 complete sets, each a different mood (one comforting/
-  familiar, one lighter/fresher, one bolder/chef-driven). Size and vary EACH
-  combo for the table using the reasoning above.
-    * filters.course == "Full meal": span courses (starters + mains + desserts,
-      scaled to the group) and include drinks — more than one kind for a larger
-      party — only when drink candidates are present.
-    * A single course chosen (e.g. only Starters/Desserts): pick a sensible
-      number of different dishes of that course for the party size.
+  familiar, one lighter/fresher, one bolder/chef-driven). Build EACH combo to
+  meet the mandatory minimums above, then add more where it improves the spread.
+    * filters.course == "Full meal": span courses and meet every minimum.
+    * A single course chosen (e.g. only Starters/Desserts): pick at least as
+      many different dishes of that course as the minimum for that course.
 - Dishes MAY repeat across combos, but each combo's own items must be distinct.
 - Every "why" is concrete and inviting — name a flavour, texture, who it suits,
   or a portion hint for big groups. Never mention price. Never promise something
@@ -160,6 +168,26 @@ RULES
 # Feature 2 — form-based recommendations (individual + 3 combos)
 # --------------------------------------------------------------------------
 
+def _combo_targets(party_size: int, has_drinks: bool) -> dict:
+    """Minimum number of DISTINCT dishes per course a full-meal combo should have
+    for this party — derived from party_size (not hardcoded per size).
+
+    A solo diner gets a small plate; every additional ~2-3 people adds another
+    distinct option in each course so a big table has real variety (a table of 8
+    lands around 3-4 starters, 4 mains, 3 desserts, 3 drinks). These are FLOORS
+    the model must meet, budget permitting; it may add more.
+    """
+    if party_size <= 1:
+        return {"starters": 1, "mains": 1, "desserts": 1,
+                "drinks": 1 if has_drinks else 0}
+    return {
+        "starters": max(2, round(party_size / 3)),
+        "mains": max(2, math.ceil(party_size / 2)),
+        "desserts": max(2, round(party_size / 3)),
+        "drinks": (max(2, round(party_size / 3)) if has_drinks else 0),
+    }
+
+
 def recommend(filters: dict, extras: dict, note: str, party_size: int, session_id: str | None = None) -> dict:
     tr = trace.start("recommend", session_id, {
         "filters": filters, "extras": extras, "note": note, "party_size": party_size,
@@ -178,11 +206,13 @@ def recommend(filters: dict, extras: dict, note: str, party_size: int, session_i
         tr.mock("MOCK_MODE on (no API key)")
     else:
         cap = menu.budget_cap(filters.get("budget"))
+        targets = _combo_targets(party_size, bool(drinks))
         user_prompt = json.dumps(
             {
                 "party_size": party_size,
                 "filters": filters,
                 "budget_total_cap": None if cap == float("inf") else int(cap),
+                "min_per_combo": targets,
                 "extras": {k: v for k, v in (extras or {}).items() if v},
                 "diner_note": note or "",
                 "candidates": [menu.compact(d) for d in pool],
@@ -191,7 +221,7 @@ def recommend(filters: dict, extras: dict, note: str, party_size: int, session_i
         )
         tr.prompt(RECOMMEND_SYSTEM, user_prompt)
         try:
-            raw = generate_json(RECOMMEND_SYSTEM, user_prompt, max_tokens=2048)
+            raw = generate_json(RECOMMEND_SYSTEM, user_prompt, max_tokens=4096)
             tr.gemini(raw)
             result = _hydrate(raw, pool)
             # If the model returned JSON but nothing usable (all ids invalid /
@@ -432,7 +462,8 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
         else:
             picks = take(ranked, i * 2, max(1, n_main))
         # de-dup within a combo while preserving order
-        seen, picks = set(), [p for p in picks if not (p["id"] in seen or seen.add(p["id"]))]
+        seen: set = set()
+        picks = [p for p in picks if not (p["id"] in seen or seen.add(p["id"]))]
         if drinks:
             picks = picks + take(drinks, i, n_drink)
         # Keep the whole combo total within the diner's budget ceiling.

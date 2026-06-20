@@ -243,11 +243,16 @@ After editing `menu.json` or backend config, **restart Flask** (no hot reload fo
 - **Gemini-only.** The earlier multi-provider abstraction was dropped.
 - **Deterministic-first, AI-for-judgement.** Filtering is Python; taste/phrasing
   is Gemini. Keeps results correct, cheap, and never shows sold-out items.
-- **Recommend like a real diner — by reasoning, not hardcoded counts.** The
-  prompt tells Gemini to picture `party_size` real people and order sensibly:
-  a bigger table gets more variety across EVERY course (~1 different drink and
-  dessert per 2-3 people, so 8 people ≈ 3-4 of each — not one mojito shared). A
-  worded "order a couple of portions" hint covers quantity — no quantity fields.
+- **Recommend like a real diner, with explicit per-course minimums.** Soft
+  "scale with the group" hints weren't enough — the model kept under-serving
+  drinks. So `service._combo_targets(party_size, has_drinks)` computes a MINIMUM
+  number of distinct dishes per course (derived from party_size, not hardcoded
+  per size: ~1 per 2-3 people → a table of 8 ≈ 3 starters, 4 mains, 3 desserts,
+  3 drinks; a solo diner = 1 of each). These are passed in the prompt as
+  `min_per_combo` and the prompt makes meeting them MANDATORY (with a worked
+  example), budget permitting. A worded "order a couple of portions" hint covers
+  quantity — no quantity fields. Recommend uses `max_tokens=4096` (bigger combos
+  = more JSON).
 - **Budget is a TOTAL ceiling for the whole table, not per-dish.** The numeric
   cap is passed as `budget_total_cap`; each combo's SET TOTAL must stay at/under
   it. When the budget is tight for a big party, the AI fits the cap FIRST and
