@@ -27,8 +27,11 @@ INPUT
 You receive a single JSON object with:
 - "party_size": integer, how many people are dining.
 - "filters": the diner's chip selections (budget, veg/diet, course, cuisine,
-  spice ceiling, drinks). These were ALREADY applied to the candidate list — use
-  them only to phrase the "why", not to re-filter.
+  spice ceiling, drinks). The diet/course/cuisine/spice were ALREADY applied to
+  the candidate list — use those only to phrase the "why".
+- "budget_total_cap": the diner's budget as a TOTAL spend ceiling for the whole
+  order in rupees (null means no limit). This is NOT a per-dish limit — it is
+  the most the WHOLE table wants to spend. You MUST respect it (see HARD RULES).
 - "extras": optional booleans the diner toggled (e.g. nut-free, bestsellers).
 - "diner_note": optional free text (occasion, allergies, mood). Honour it.
 - "candidates": the ONLY dishes you may use. Each has id, name, cuisine, course,
@@ -37,6 +40,12 @@ You receive a single JSON object with:
 HARD RULES
 - Recommend dishes ONLY by an "id" that appears in "candidates". NEVER invent a
   dish, a name, or an id. If you are unsure an id exists, do not use it.
+- BUDGET: if "budget_total_cap" is not null, the SUM of the prices of all items
+  in EACH combo MUST be at or under that number. Add up the candidate prices
+  yourself and drop or swap to cheaper dishes until each combo's total fits. A
+  combo that exceeds the cap is WRONG. If even a minimal sensible combo can't fit
+  the cap, get as close as possible with the fewest essential dishes. (Still keep
+  variety where the budget allows — fit the cap first, then maximise variety.)
 - Output MUST be a single valid JSON object and NOTHING else: no prose, no
   explanation, no markdown, no ``` fences. Start with { and end with }.
 - All text fields must be plain text (no markdown, no emojis, no prices).
@@ -56,9 +65,10 @@ This is the most important rule. Picture "party_size" real people sitting down
 together and order the way a thoughtful host actually would. Reason from common
 sense — do NOT apply a fixed dish count.
 - A bigger table needs MORE variety across EVERY part of the meal: more
-  starters, more mains, AND a real choice of drinks and desserts. Eight people
-  will not share a single drink or one dessert — they'd want several different
-  ones so everyone has something they like. A solo diner wants just a dish or
+  starters, more mains, AND a real choice of drinks and desserts — roughly one
+  different drink and one different dessert per 2-3 people (so a table of 8 has
+  about 3-4 drink options and 3-4 desserts, not one or two token items). Nobody
+  shares a single drink across a big group. A solo diner wants just a dish or
   two, not a feast.
 - Use each dish's "serves" against "party_size" to judge how many distinct
   dishes are enough to actually feed and satisfy the group. If one portion of a
@@ -167,10 +177,12 @@ def recommend(filters: dict, extras: dict, note: str, party_size: int, session_i
         result = _mock_recommend(candidates, drinks, filters, party_size)
         tr.mock("MOCK_MODE on (no API key)")
     else:
+        cap = menu.budget_cap(filters.get("budget"))
         user_prompt = json.dumps(
             {
                 "party_size": party_size,
                 "filters": filters,
+                "budget_total_cap": None if cap == float("inf") else int(cap),
                 "extras": {k: v for k, v in (extras or {}).items() if v},
                 "diner_note": note or "",
                 "candidates": [menu.compact(d) for d in pool],
@@ -377,11 +389,22 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
     # don't overflow a card, floored at 1 where the course applies.
     n_main = max(1, math.ceil(party_size / 2))
     n_start = max(1, round(party_size / 3))
-    n_dess = max(1, round(party_size / 4))
-    n_drink = max(1, round(party_size / 4))
-    n_main, n_start, n_dess, n_drink = min(n_main, 5), min(n_start, 4), min(n_dess, 3), min(n_drink, 3)
+    n_dess = max(1, round(party_size / 3))
+    n_drink = max(1, round(party_size / 3))
+    n_main, n_start, n_dess, n_drink = min(n_main, 5), min(n_start, 4), min(n_dess, 4), min(n_drink, 4)
     if party_size <= 1:  # a solo diner: a dish or two, not a spread
         n_main, n_start, n_dess, n_drink = 1, 0, 0, 1
+
+    cap = menu.budget_cap(filters.get("budget"))
+
+    def fit_budget(items):
+        """Drop the priciest items until the total is within the budget cap,
+        keeping at least one dish so a combo is never empty."""
+        kept = list(items)
+        while kept and sum(p["price"] for p in kept) > cap and len(kept) > 1:
+            # remove the single most expensive item
+            kept.remove(max(kept, key=lambda p: p["price"]))
+        return kept
 
     n_individual = min(6, max(4, party_size))
     individual = [{**_dish_card(d), "why": why(d)} for d in ranked[:n_individual]]
@@ -412,6 +435,8 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
         seen, picks = set(), [p for p in picks if not (p["id"] in seen or seen.add(p["id"]))]
         if drinks:
             picks = picks + take(drinks, i, n_drink)
+        # Keep the whole combo total within the diner's budget ceiling.
+        picks = fit_budget(picks)
         if not picks:
             continue
         big = party_size >= 7

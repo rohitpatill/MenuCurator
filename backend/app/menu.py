@@ -37,6 +37,11 @@ def get_dish(dish_id: str) -> dict | None:
     return _BY_ID.get(dish_id)
 
 
+def budget_cap(budget_filter: str | None) -> float:
+    """Resolve the Budget chip to a rupee ceiling (inf for 'No limits')."""
+    return _BUDGET_CAP.get(budget_filter, float("inf"))
+
+
 def available_dishes() -> list[dict]:
     return [d for d in DISHES if d.get("available", True)]
 

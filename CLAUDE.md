@@ -245,13 +245,17 @@ After editing `menu.json` or backend config, **restart Flask** (no hot reload fo
   is Gemini. Keeps results correct, cheap, and never shows sold-out items.
 - **Recommend like a real diner — by reasoning, not hardcoded counts.** The
   prompt tells Gemini to picture `party_size` real people and order sensibly:
-  a bigger table gets more variety across EVERY course, including several
-  different drinks and desserts (8 people won't share one mojito). A worded
-  "order a couple of portions" hint covers quantity — no quantity fields. The
-  mock fallback approximates this with a smooth proportional formula (not
-  per-size buckets). **Breads are never recommended** (default accompaniment);
-  the AI helps decide curries/starters/mains/desserts/drinks only. No
-  cart/quantity — we suggest, we don't fix a menu.
+  a bigger table gets more variety across EVERY course (~1 different drink and
+  dessert per 2-3 people, so 8 people ≈ 3-4 of each — not one mojito shared). A
+  worded "order a couple of portions" hint covers quantity — no quantity fields.
+- **Budget is a TOTAL ceiling for the whole table, not per-dish.** The numeric
+  cap is passed as `budget_total_cap`; each combo's SET TOTAL must stay at/under
+  it. When the budget is tight for a big party, the AI fits the cap FIRST and
+  trades down variety (correct trade-off — variety grows when budget allows).
+  The mock fallback enforces the same via `fit_budget()` (drops the priciest
+  item until the total fits). **Breads are never recommended** (default
+  accompaniment); the AI helps decide curries/starters/mains/desserts/drinks
+  only. No cart/quantity — we suggest, we don't fix a menu.
 - **MOCK_MODE** keeps the app fully working with no API key.
 - **One state hook** (`useMenuApp`) — screens are presentational; `picks` persist
   across all navigation.
