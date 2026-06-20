@@ -17,6 +17,7 @@ export const EXTRA_CHIPS = [
   ["dairy", "Dairy-free"],
   ["gluten", "Gluten-free"],
   ["nog", "No onion-garlic"],
+  ["nobutter", "No butter"],
   ["hot", "Tea / Coffee"],
   ["best", "Bestsellers only"],
   ["chef", "Chef's specials"],

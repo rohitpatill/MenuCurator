@@ -50,22 +50,43 @@ OUTPUT SHAPE (exactly this)
   ]
 }
 
+THINK LIKE A REAL DINER ORDERING FOR THIS PARTY SIZE
+This is the most important rule. Order the way a sensible person actually would
+for "party_size" people — never a fixed 3-dish set regardless of headcount.
+- 1 person: 1-2 dishes total. Usually ONE main, optionally one starter or one
+  dessert. NEVER suggest multiple curries or a 3-course feast for one person.
+- 2-3 people: a small shared spread — about 1 starter, 1-2 mains, maybe a
+  dessert to share.
+- 4-6 people: a fuller table — 2 starters, 2-3 mains (mix cuisines/proteins),
+  1-2 desserts.
+- 7+ people (large group): a generous variety — 3-4 starters, 3-5 different
+  mains (several curries / proteins so the table has choice), 2-3 desserts. The
+  number of DIFFERENT dishes grows with the group; aim that the combo's dishes'
+  combined "serves" roughly covers party_size. When one popular dish alone won't
+  feed everyone, say so in words in the "why" (e.g. "order 2-3 portions of the
+  butter chicken for the group") — do NOT add quantity fields; we only suggest.
+Use each dish's "serves" to judge how many distinct dishes a combo needs.
+
+DO NOT recommend breads/naan/roti (course is a side accompaniment, not a
+decision). If any bread-like dish is in candidates, leave it out — diners add
+bread by default and don't need help choosing it.
+
 HOW TO CHOOSE
-- "individual": 4-6 of the strongest single dishes, best first. Prefer dishes
-  tagged "bestseller" or "chefspecial", variety across course/cuisine, and a fit
-  for the party size and any note.
-- "combos": EXACTLY 3 complete sets, each a different mood. Suggested moods:
-  one comforting/familiar, one lighter/fresher, one bolder/chef-driven.
-    * If filters.course is "Full meal": each combo should span courses —
-      ideally a Starter + a Main + a Dessert, and add ONE drink only if drink
-      candidates are present.
-    * If a single course was chosen (e.g. only Starters or only Desserts): make
-      each combo 2-3 different dishes of that course.
-    * Scale portions to party_size: for larger parties, lean on dishes whose
-      "serves" is higher or include an extra sharing item.
+- "individual": 4-6 of the strongest single dishes, best first (scale toward the
+  lower end for tiny parties, higher for big ones). Prefer dishes tagged
+  "bestseller" or "chefspecial", with variety across course/cuisine, fitting the
+  party size and any note.
+- "combos": EXACTLY 3 complete sets, each a different mood (one comforting/
+  familiar, one lighter/fresher, one bolder/chef-driven). Size EACH combo to the
+  party per the scaling rules above.
+    * filters.course == "Full meal": span courses (starter(s) + main(s) +
+      dessert), and add ONE drink only if drink candidates are present.
+    * A single course chosen (e.g. only Starters/Desserts): make each combo a
+      sensible number of different dishes of that course for the party size.
 - Dishes MAY repeat across combos, but each combo's own items must be distinct.
-- Every "why" is short, concrete and inviting — name a flavour, texture, or who
-  it suits. Never mention price. Never promise something not in the dish facts.
+- Every "why" is concrete and inviting — name a flavour, texture, who it suits,
+  or a portion hint for big groups. Never mention price. Never promise something
+  not in the dish facts.
 - If the candidate pool is small, still return the best you can (fewer combos is
   acceptable only if there genuinely aren't enough dishes to build 3)."""
 
@@ -346,12 +367,30 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
         serve = f"easily serves your {party_size}" if d["serves"] >= party_size else "perfect for sharing"
         return f"{lead} — {heat}, {serve}."
 
-    individual = [{**_dish_card(d), "why": why(d)} for d in ranked[:6]]
+    # How many distinct dishes per course scales with the party, the way a real
+    # diner would order (1 person = a dish or two; a big group = a varied spread).
+    if party_size <= 1:
+        n_start, n_main, n_dess = 0, 1, 0
+    elif party_size <= 3:
+        n_start, n_main, n_dess = 1, 1, 1
+    elif party_size <= 6:
+        n_start, n_main, n_dess = 2, 3, 1
+    else:
+        n_start, n_main, n_dess = 3, 4, 2
+
+    n_individual = 4 if party_size <= 3 else 6
+    individual = [{**_dish_card(d), "why": why(d)} for d in ranked[:n_individual]]
     for dr in drinks[:1]:
         individual.append({**_dish_card(dr), "why": "A refreshing drink to start."})
 
     def by_course(c):
         return [d for d in ranked if d["course"] == c]
+
+    def take(seq, start, count):
+        """Pick `count` items beginning at offset `start`, wrapping if short."""
+        if not seq or count <= 0:
+            return []
+        return [seq[(start + k) % len(seq)] for k in range(min(count, len(seq)))]
 
     combos = []
     styles = [("The Comfort Spread", "Rich, familiar and easy to love"),
@@ -359,20 +398,22 @@ def _mock_recommend(candidates, drinks, filters, party_size) -> dict:
               ("Chef's Adventure", "Bolder, more chef-driven flavours")]
     for i, (title, sub) in enumerate(styles):
         if full:
-            picks = (by_course("Starter")[i:i+1] or by_course("Starter")[:1]) \
-                + (by_course("Main")[i:i+1] or by_course("Main")[:1]) \
-                + (by_course("Dessert")[i:i+1] or by_course("Dessert")[:1])
+            picks = take(by_course("Starter"), i, n_start) \
+                + take(by_course("Main"), i, n_main) \
+                + take(by_course("Dessert"), i, n_dess)
         else:
-            chunk = ranked[i*2:i*2+2] or ranked[:2]
-            picks = chunk
-        picks = [p for p in picks if p]
+            picks = take(ranked, i * 2, max(1, n_main))
+        # de-dup within a combo while preserving order
+        seen, picks = set(), [p for p in picks if not (p["id"] in seen or seen.add(p["id"]))]
         if drinks:
-            picks = picks + drinks[i % len(drinks):i % len(drinks) + 1]
+            picks = picks + take(drinks, i, 1)
         if not picks:
             continue
+        big = party_size >= 7
+        tail = " Order a couple of portions of the popular dishes for the group." if big else ""
         combos.append({
             "title": title,
-            "why": f"{sub} — built for your party of {party_size}.",
+            "why": f"{sub} — built for your party of {party_size}.{tail}",
             "groups": _group_by_course(picks),
             "total": sum(p["price"] for p in picks),
         })

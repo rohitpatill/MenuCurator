@@ -47,10 +47,11 @@ def apply_filters(filters: dict, extras: dict | None = None) -> list[dict]:
     gluten, nog, best, chef, hot."""
     extras = extras or {}
     f = filters
-    # Food only: drinks (mocktail/cocktail/spirit/beverage) enter the candidate
-    # pool exclusively via drink_candidates(), gated by the Drinks chip. This
-    # keeps spirits/beer/wine/tea out of food recommendations unless asked for.
-    out = [d for d in available_dishes() if d.get("type") == "food"]
+    # Food only, and never breads: drinks (mocktail/cocktail/spirit/beverage)
+    # enter the pool exclusively via drink_candidates() gated by the Drinks chip,
+    # and accompaniment breads (naan/roti/basket, flagged "bread") are excluded
+    # because diners add bread by default — it's not a dish we recommend.
+    out = [d for d in available_dishes() if d.get("type") == "food" and not d.get("bread")]
 
     # Diet
     veg = f.get("veg")
@@ -90,11 +91,25 @@ def apply_filters(filters: dict, extras: dict | None = None) -> list[dict]:
         out = [d for d in out if d.get("tag") == "chefspecial"]
     if extras.get("nog"):
         out = [d for d in out if d.get("nog")]
+    if extras.get("nobutter"):
+        # Derived from ingredients (butter / ghee / herb-butter) so no manual
+        # per-dish tagging is needed and new dishes are covered automatically.
+        out = [d for d in out if not _has_butter(d)]
     for allergen in ("nut", "dairy", "gluten"):
         if extras.get(allergen):
             out = [d for d in out if allergen not in d.get("allergens", [])]
 
     return out
+
+
+_BUTTER_WORDS = ("butter", "ghee", "makhani")
+
+
+def _has_butter(dish: dict) -> bool:
+    return any(
+        any(w in str(ing).lower() for w in _BUTTER_WORDS)
+        for ing in dish.get("ingredients", [])
+    )
 
 
 _DRINK_TYPES = {

@@ -255,6 +255,47 @@ def test_recommend_edge():
     check("over-constrained valid shape", shape_ok, why)
 
 
+def _combo_dish_count(combo: dict) -> int:
+    return sum(len(g["items"]) for g in combo["groups"])
+
+
+def test_party_scaling_and_filters():
+    """Recommendations must scale with party size, never push breads, and honour
+    the no-butter extra."""
+    section("Party-size scaling + bread exclusion + no-butter")
+    base = {"budget": "No limits", "veg": "Both", "party": "Custom",
+            "drinks": "None", "course": "Full meal", "cuisine": "Any", "spice": "Medium"}
+
+    sizes = {}
+    for ps in (1, 3, 10):
+        code, data = post("/api/recommend", {"filters": base, "extras": {}, "note": "", "party_size": ps})
+        check(f"[party {ps}] 200", code == 200, str(code))
+        if not data or not data.get("combos"):
+            continue
+        avg = sum(_combo_dish_count(c) for c in data["combos"]) / len(data["combos"])
+        sizes[ps] = avg
+        # No bread should ever appear in a combo.
+        names = [it["name"] for c in data["combos"] for g in c["groups"] for it in g["items"]]
+        names += [d["name"] for d in data["individual"]]
+        bread_leak = [n for n in names if n in ("Assorted Bread Basket", "Garlic Naan")]
+        check(f"[party {ps}] no bread recommended", not bread_leak, str(bread_leak))
+
+    # A party of 10 should get more dishes per combo than a party of 1.
+    if 1 in sizes and 10 in sizes:
+        check("combos scale up with party size", sizes[10] > sizes[1], f"1->{sizes[1]:.1f}, 10->{sizes[10]:.1f}")
+        print(f"  (avg combo dishes: party1={sizes.get(1):.1f}, party3={sizes.get(3):.1f}, party10={sizes.get(10):.1f})")
+
+    # No-butter filter must drop every butter dish from the candidate pool.
+    code, data = post("/api/recommend", {"filters": base, "extras": {"nobutter": True}, "note": "", "party_size": 4})
+    check("[no-butter] 200", code == 200, str(code))
+    if data:
+        butter_names = {"Butter Chicken", "Dal Vermillion", "Jain Paneer Butter Masala",
+                         "Grilled Fish with Lemon Butter", "Grilled Chicken Steak", "Molten Chocolate Fondant"}
+        cand_names = {c["name"] for c in data.get("candidates", [])}
+        leaked = butter_names & cand_names
+        check("[no-butter] butter dishes removed from candidates", not leaked, str(leaked))
+
+
 def first_available_dish_id() -> str:
     _, data = get("/api/menu")
     return data["dishes"][0]["id"]
@@ -409,6 +450,7 @@ def main():
     test_menu()
     test_recommend()
     test_recommend_edge()
+    test_party_scaling_and_filters()
     test_ask_dish()
     test_refine()
     test_conversation_history()
