@@ -89,10 +89,11 @@ export function useMenuApp() {
   async function askRefine(text) {
     if (!text) return;
     const picked = menu.dishes.filter((d) => picks[d.id]);
+    const history = refineChat; // thread so far (before this question) for context
     setRefineChat((c) => [...c, { role: "user", text }]);
     setRefineTyping(true);
     try {
-      const r = await api.refine({ picked_ids: picked.map((d) => d.id), question: text, party_size: party });
+      const r = await api.refine({ picked_ids: picked.map((d) => d.id), question: text, party_size: party, history });
       setRefineChat((c) => [...c, { role: "ai", text: r.answer }]);
     } catch {
       setRefineChat((c) => [...c, { role: "ai", text: "Sorry — I couldn't reach the kitchen just now." }]);
@@ -115,10 +116,11 @@ export function useMenuApp() {
   }
   async function ask(text) {
     if (!dish || !text) return;
+    const history = chat; // thread so far (before this question) for context
     setChat((c) => [...c, { role: "user", text }]);
     setDishTyping(true);
     try {
-      const r = await api.askDish(dish.id, text);
+      const r = await api.askDish(dish.id, text, history);
       setChat((c) => [...c, { role: "ai", text: r.answer }]);
     } catch {
       setChat((c) => [...c, { role: "ai", text: "Sorry — I couldn't reach the kitchen just now." }]);
