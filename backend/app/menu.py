@@ -47,7 +47,10 @@ def apply_filters(filters: dict, extras: dict | None = None) -> list[dict]:
     gluten, nog, best, chef, hot."""
     extras = extras or {}
     f = filters
-    out = available_dishes()
+    # Food only: drinks (mocktail/cocktail/spirit/beverage) enter the candidate
+    # pool exclusively via drink_candidates(), gated by the Drinks chip. This
+    # keeps spirits/beer/wine/tea out of food recommendations unless asked for.
+    out = [d for d in available_dishes() if d.get("type") == "food"]
 
     # Diet
     veg = f.get("veg")
@@ -94,18 +97,25 @@ def apply_filters(filters: dict, extras: dict | None = None) -> list[dict]:
     return out
 
 
+_DRINK_TYPES = {
+    "Mocktails": ("mocktail",),
+    "Cocktails": ("cocktail",),
+    "Both": ("mocktail", "cocktail"),
+}
+
+
 def drink_candidates(drinks_filter: str) -> list[dict]:
-    """Return drink dishes matching the drinks chip selection."""
-    if drinks_filter in (None, "None"):
+    """Return drink dishes matching the drinks chip selection.
+
+    The recommend form only offers Mocktails / Cocktails / Both (no neat
+    spirits/beer/wine, which the diner browses separately). Anything else —
+    including "None" — yields no drink candidates so the model never adds a
+    drink the diner didn't ask for.
+    """
+    wanted = _DRINK_TYPES.get(drinks_filter)
+    if not wanted:
         return []
-    avail = available_dishes()
-    if drinks_filter == "Mocktails":
-        return [d for d in avail if d["type"] == "mocktail"]
-    if drinks_filter == "Cocktails":
-        return [d for d in avail if d["type"] == "cocktail"]
-    if drinks_filter == "Both":
-        return [d for d in avail if d["type"] in ("mocktail", "cocktail")]
-    return []
+    return [d for d in available_dishes() if d["type"] in wanted]
 
 
 def compact(dish: dict) -> dict:

@@ -45,7 +45,8 @@ def recommend():
     extras = body.get("extras", {})
     note = body.get("note", "")
     party_size = int(body.get("party_size", 3) or 3)
-    result = service.recommend(filters, extras, note, party_size)
+    session_id = body.get("session_id")
+    result = service.recommend(filters, extras, note, party_size, session_id)
     return jsonify(result)
 
 
@@ -55,7 +56,9 @@ def ask_dish(dish_id: str):
     question = (body.get("question") or "").strip()
     if not question:
         return jsonify({"error": "question is required"}), 400
-    answer = service.ask_dish(dish_id, question)
+    session_id = body.get("session_id")
+    history = body.get("history") or []
+    answer = service.ask_dish(dish_id, question, session_id, history)
     return jsonify({"answer": answer})
 
 
@@ -65,5 +68,7 @@ def refine():
     picked_ids = body.get("picked_ids", [])
     question = (body.get("question") or "").strip()
     party_size = int(body.get("party_size", 3) or 3)
-    answer = service.refine(picked_ids, question, party_size)
+    session_id = body.get("session_id")
+    history = body.get("history") or []
+    answer = service.refine(picked_ids, question, party_size, session_id, history)
     return jsonify({"answer": answer})
