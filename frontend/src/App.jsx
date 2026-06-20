@@ -44,7 +44,7 @@ export default function App() {
           <Results data={a.results} view={a.resultView} setView={a.setResultView} onAsk={(d) => a.openDish(d, "results")} onBack={() => a.setScreen("filter")} />
         )}
         {screen === "menu" && (
-          <Menu mode={a.menuMode} sections={a.sections} picks={a.picks} onTapAsk={(d) => a.openDish(d, "menu")} onTapPick={a.togglePick} />
+          <Menu mode={a.menuMode} dishes={menu.dishes} picks={a.picks} pickCount={a.pickCount} onTapAsk={(d) => a.openDish(d, "menu")} onTapPick={a.togglePick} />
         )}
         {screen === "refine" && <Refine picked={menu.dishes.filter((d) => a.picks[d.id])} chat={a.refineChat} typing={a.refineTyping} />}
         {screen === "dish" && a.dish && <Dish dish={a.dish} chat={a.chat} typing={a.dishTyping} />}

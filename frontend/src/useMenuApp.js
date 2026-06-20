@@ -1,5 +1,5 @@
 // All diner-app state + actions in one hook, so App.jsx stays a thin router.
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "./api";
 import { DEFAULT_FILTERS, partySize } from "./constants.js";
 
@@ -35,14 +35,6 @@ export function useMenuApp() {
   useEffect(() => {
     api.getMenu().then(setMenu).catch(() => {});
   }, []);
-
-  const sections = useMemo(() => {
-    const order = ["Starter", "Main", "Dessert"];
-    const titleMap = { Starter: "Starters", Main: "Main Course", Dessert: "Desserts" };
-    return order
-      .map((c) => ({ title: titleMap[c], items: menu.dishes.filter((d) => d.course === c) }))
-      .filter((s) => s.items.length);
-  }, [menu]);
 
   const pickCount = Object.keys(picks).filter((k) => picks[k]).length;
   const party = partySize(filters.party);
@@ -145,7 +137,7 @@ export function useMenuApp() {
     results, resultView, setResultView,
     picks, togglePick, pickCount, refineChat, refineTyping, refineInput, setRefineInput,
     dish, chat, dishTyping, input, setInput,
-    sections, party, back, runFilter, openMenu, runRefine, askRefine, sendRefine,
+    party, back, runFilter, openMenu, runRefine, askRefine, sendRefine,
     openDish, ask, sendInput,
   };
 }
